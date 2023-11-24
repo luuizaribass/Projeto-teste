@@ -1,0 +1,1075 @@
+/* importa font  */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* começo do reset e container geral*/
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+    background-color: var(--color-neutral-30);
+    height: 100%;
+}
+
+#container {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-neutral-30);
+    width: 100vw;
+    display: flex;
+    padding: 0px 150px;
+}
+
+#container>a>img {
+    align-items: center;
+    justify-content: center;
+}
+
+/* fim do reset e container geral */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*começo modo noturno*/
+
+.modo-noturno {
+    background-color: var(--color-neutral-10);
+    color: #fff;
+}
+
+.modo-noturno a {
+    color: #ffffff;
+}
+
+.modo-noturno body {
+    background-color: var(--color-neutral-10);
+}
+
+.modo-noturno footer {
+    background-color: var(--color-neutral-10);
+    color: #ffffff;
+}
+
+.modo-noturno header #container {
+    background-color: var(--color-neutral-10);
+    border-bottom: 1.6px solid var(--color-neutral-30);
+    color: #fff;
+}
+
+
+
+
+/*fim modo noturno*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* começo da paleta de cor */
+
+:root {
+    --color-neutral-00: #31201E;
+    --color-neutral-0: #31201E;
+    --color-neutral-10: #171717;
+    --color-neutral-20: #000000;
+    --color-neutral-30: #ffffff;
+    --color-neutral-40: #f5f5f5;
+    --color-neutral-50: #E8E8E8;
+    --color-neutral-60: #a8a29e;
+    --color-neutral-70: #fff7f4;
+    --color-neutral-80: #fff2f0;
+    --color-neutral-90: #F1E3E1;
+    --color-neutral-100: #f0d9d6;
+    --color-neutral-110: #E0C7BD;
+    --color-neutral-120: #BF8B86;
+    --color-neutral-130: #DC9F8D;
+    --color-neutral-140: #A07573;
+    --color-neutral-150: #A66454;
+    --color-neutral-160: #A66454;
+}
+
+/* fim da paleta de cor */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* começo da barra menu */
+
+header {
+    position: fixed;
+    margin-bottom: 500px;
+    z-index: 1000;
+    border-bottom: 1.6px solid var(--color-neutral-10);
+    width: 100vw;
+
+}
+
+header>a>img {
+    padding: 10px;
+    margin: 0;
+    width: 100px;
+    text-align: right;
+
+}
+
+span#burguer {
+    display: none;
+}
+
+#logo-img {
+    width: 100px;
+}
+
+menu {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+menu>ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+menu>ul>li {
+    display: inline-block;
+    padding: 0;
+    margin: 0px 10px;
+}
+
+menu>ul>li>a {
+    display: block;
+    padding: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    color: var(--color-neutral-20);
+}
+
+menu>ul>li>a>img {
+    width: 18px;
+}
+
+menu>ul>li>a:hover {
+    color: var(--color-neutral-120);
+}
+
+#espaço {
+    padding-right: 50px;
+}
+
+#iconespaço:hover {
+    color: var(--color-neutral-120);
+}
+
+.fa-moon,
+.fa-sun {
+    font-size: 18px !important;
+    height: 16.8px !important;
+    width: 18px !important;
+}
+
+/* #mode_icon:hover {
+    color: #BF8B86; 
+} */
+
+
+#mode_icon,
+#moon_icon {
+    color: #000000;
+    transition: color 0.1s ease;
+}
+
+#mode_icon:hover,
+#moon_icon:hover {
+    color: #BF8B86;
+}
+
+body.modo-noturno #mode_icon,
+body.modo-noturno #moon_icon {
+    color: #ffffff !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* começa barra pesquisar UIVERSE*/
+
+/* Estilizando o container principal */
+#barraPesquisar {
+    position: relative;
+    box-sizing: border-box;
+    width: fit-content;
+}
+
+/* Estilizando a caixa principal com a barra de pesquisa */
+.mainbox {
+    box-sizing: border-box;
+    position: relative;
+    width: 200px;
+    height: 30px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    border-radius: 200px;
+    background-color: rgb(0, 0, 0);
+    transition: all 0.3s ease; /* Transição suave para animações */
+}
+
+/* Estilizando o checkbox (interruptor) */
+.checkbox:focus {
+    border: none;
+    outline: none;
+}
+
+.checkbox:checked {
+    right: 10px; /* Movendo a barra para a direita quando o checkbox está marcado */
+}
+
+.checkbox:checked~.mainbox {
+    width: 30px; /* Reduzindo a largura da caixa principal quando o checkbox está marcado */
+}
+
+.checkbox:checked~.mainbox .search_input {
+    width: 0;
+    height: 0px; /* Tornando a caixa de pesquisa invisível quando o checkbox está marcado */
+}
+
+.checkbox:checked~.mainbox .iconContainer {
+    padding-right: 8px; /* Ajustando o espaçamento quando o checkbox está marcado */
+}
+
+/* Estilizando o checkbox */
+.checkbox {
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 17px;
+    top: 10px;
+    z-index: 9;
+    cursor: pointer;
+    appearance: none; /* Removendo estilos padrão do sistema operacional */
+}
+
+/* Estilizando a caixa de pesquisa */
+.search_input {
+    box-sizing: border-box;
+    height: 100%;
+    width: 170px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    font-size: 1em;
+    color: white;
+    transition: all 0.3s ease; /* Transição suave para animações */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Estilizando o texto de placeholder na caixa de pesquisa */
+.search_input::placeholder {
+    color: rgba(255, 255, 255, 0.776);
+}
+
+/* Estilizando o contêiner do ícone de pesquisa */
+.iconContainer {
+    box-sizing: border-box;
+    padding-top: 5px;
+    width: fit-content;
+    transition: all 0.3s ease; /* Transição suave para animações */
+}
+
+/* Estilizando o ícone de pesquisa */
+.search_icon {
+    box-sizing: border-box;
+    fill: white;
+    font-size: 0.9em;
+}
+
+
+/* finaliza barra de pesquisa UIVERSE */
+/* finaliza menu */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* começo carrossel de imagem  */
+
+#carrossel {
+    width: 600px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+}
+
+#imagens {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.imagem {
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+#anterior,
+#proximo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+#anterior {
+    left: 10px;
+}
+
+#proximo {
+    right: 10px;
+}
+
+
+/* fim carrossel de imagem  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* começo de itens da loja */
+
+.item-caixa {
+    width: 320px;
+    padding: 20px;
+    /* margin: 30px 30px; */
+    border: 1.9px solid black;
+    border-radius: 5px;
+}
+
+.troca-item {
+    width: 190px;
+}
+
+.troca-item:hover {
+    width: 200px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#fig-item {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
+
+#fig-item img {
+    margin: 0px;
+    width: 320px;
+}
+
+.item-conteudo {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+
+}
+
+.nome {
+    font: 700 18px 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.preco {
+    font: 700 18px 'Poppins', sans-serif;
+    text-align: left;
+}
+
+.parcela {
+    font: 700 18px 'Poppins', sans-serif;
+    text-align: right;
+}
+
+.descicao {
+    font: 400 14px 'Poppins', sans-serif;
+    text-align: justify;
+    margin: 3px;
+}
+
+/* fim de itens da loja */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* começo paginas de login */
+
+#container_login {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--color-neutral-100);
+    opacity: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#login_form {
+    background-color: var(--color-neutral-30);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    border-radius: 8px;
+    gap: 30px;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0, 336);
+    height: fit-content;
+    animation: dark-to-light 0.03s ease-in-out;
+}
+
+#form_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#form_header h1 {
+    font-size: 40px;
+    position: relative;
+}
+
+#form_header h1::before {
+    position: absolute;
+    content: '';
+    width: 40%;
+    background-color: var(--color-neutral-150);
+    height: 3px;
+    bottom: 10px;
+    border-radius: 5px;
+}
+
+#mode_icon {
+    cursor: pointer;
+    font-size: 28px;
+}
+
+#social_mediaa {
+    display: flex;
+    justify-content: space-around;
+}
+
+#social_mediaa img {
+    width: 50px;
+}
+
+#social_mediaa img:hover {
+    transform: scale(1.2);
+}
+
+#inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.input-box label {
+    font-size: 14px;
+    color: var(--color-neutral-60);
+}
+
+.input-field {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 3px;
+    cursor: text;
+    border-bottom: 1px solid var(--color-neutral-20);
+}
+
+.input-field i {
+    font-size: 18px;
+    color: var(--color-neutral-20);
+}
+
+.input-field input {
+    border: none;
+    background-color: transparent;
+    width: 260px;
+    font-size: 18px;
+    padding: 0px 5px;
+}
+
+.input-field input:focus {
+    outline: none;
+}
+
+#forgot_password a {
+    margin-top: 3px;
+    text-decoration: none;
+    font-size: 12px;
+    color: var(--color-neutral-60);
+}
+
+#forgot_password a:hover {
+    color: var(--color-neutral-140);
+}
+
+#login_button {
+    border: none;
+    background-color: var(--color-neutral-20);
+    color: var(--color-neutral-30);
+    padding: 7px;
+    font-size: 18px;
+    border-radius: 3px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#login_button:hover {
+    transform: scale(1.05);
+}
+
+.dark#login_form {
+    color: var(--color-neutral-30);
+    background-color: var(--color-neutral-10);
+    animation: light-to-dark 0.03s ease-in-out;
+}
+
+.dark#login_form .input-field input,
+.dark#login_form .input-field i {
+    color: var(--color-neutral-30);
+}
+
+@keyframes dark-to-light {
+    0% {
+        background-color: var(--color-neutral-40);
+    }
+
+    100% {
+        background-color: var(--color-neutral-10);
+    }
+
+}
+
+@keyframes dark-to-dark {
+    0% {
+        background-color: var(--color-neutral-10);
+    }
+
+    100% {
+        background-color: var(--color-neutral-40);
+    }
+
+}
+
+.dark .input-field {
+    border-bottom: 1px solid #a8a29e;
+}
+
+#login_button.dark {
+    background-color: white;
+    color: black;
+}
+
+/* fim paginas de login */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* começo dos rodapé */
+
+#footer-cor {
+    color: var(--color-neutral-40);
+}
+
+#footer-corpo {
+    background-color: var(--color-neutral-20);
+    display: grid;
+    grid-column: 25% 25% 25% 25%;
+    grid-template-columns: 25% 25% 25% 25%;
+    /* padding: 3rem 3.5rem; */
+    padding: 3rem 3.5rem 3rem 7rem;
+}
+
+#footer-corpo h1 {
+    margin-bottom: 0.75rem;
+}
+
+#footer-midias {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+#footer-midias .footer-link {
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    color: var(--color-neutral-40);
+    border-radius: 50%;
+    transition: all 0.4s;
+}
+
+#footer-midias .footer-link i {
+    font-size: 1.25rem;
+}
+
+#footer-midias .footer-link :hover {
+    opacity: 0.9;
+}
+
+#footer-contatos {
+    display: flex;
+    flex-direction: column;
+    gap: 1, 5rem;
+}
+
+#footer-contatos p {
+    color: var(--color-neutral-30);
+}
+
+#input_group {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-neutral-0);
+    border-radius: 4px;
+}
+
+#input_group input {
+    all: unset;
+    padding: 0.75rem;
+    width: 100%;
+}
+
+#input_group button {
+    background-color: #A66454;
+    border: none;
+    color: var(--color-neutral-40);
+    padding: 0px 1.25rem;
+    font-size: 1.25rem;
+    height: 100%;
+    border-radius: 0px 4px 4px 0px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+#input_group button:hover {
+    opacity: 1.0;
+}
+
+
+
+@media screen and (max-width: 890px) {
+    #footer-corpo {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    #footer-corpo {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 3rem 2rem;
+    }
+}
+
+.footer-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style: none;
+
+}
+
+.footer-lista.footer-link {
+    color: var(--color-neutral-30);
+}
+
+.footer-lista.footer-link :hover {
+    color: #A66454;
+}
+
+
+.footer-link {
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-neutral-30);
+    text-decoration: none;
+    text-align: left;
+}
+
+.contato {
+    display: flex;
+    text-align: center;
+}
+
+.contato-nome {
+    font: 300 18px 'Mont', sans-serif;
+    color: #fff;
+}
+
+
+#coluna-tres {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+
+}
+
+#coluna-tres .footer-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    color: var(--color-neutral-40);
+    border-radius: 50%;
+    transition: all 0.4s;
+}
+
+#coluna-tres .footer-link i {
+    font-size: 1.25rem;
+    margin: 5px;
+}
+
+#coluna3 .footer-link :hover {
+    opacity: 0.9;
+}
+
+.contato {
+    display: flex;
+    align-items: center;
+}
+
+#footer-final {
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-neutral-10);
+    font-size: 1.0rem;
+    padding: 1.5rem;
+    font-weight: 100;
+}
+
+/* fim dos rodapé */
